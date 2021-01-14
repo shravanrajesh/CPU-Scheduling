@@ -1,10 +1,27 @@
-# CPU Scheduling
+
+<h1 align="center"> CPU Scheduling </h1>
+
+## About
 This C++ program is designed to simulate the behavior of a CPU scheduler, i.e., choose a process from the ready queue based on a scheduling algorithm to execute it by the processor.
 
-#### CLASSES:
+## Table of contents
+
+- [About](#about)
+- [Classes](#classes)
+	- [Process](#process)
+	- [Process_Creator](#process_creator)
+	- [Scheduler](#scheduler)
+	- [Simulator](#classes)
+- [Other Functions](#other-functions)
+- [Assumptions](#assumptions)
+- [Values Used ](#values-used)
+- [License](#license)
+- [Footer](#footer)
+
+## Classes:
 The simulator consists of the following classes:
 
-##### 1) Process: 
+### 1) Process: 
 This class is used to store Process ID, Arrival Time, Burst Time, Completion Time , Turn Around Time, Waiting Time and the Response Time of a process.
   - ##### Data Members:
       - ***pid:*** Process ID
@@ -38,7 +55,7 @@ This class is used to store Process ID, Arrival Time, Burst Time, Completion Tim
       - ***quata:*** increments at_temp
 
 
-##### 2) Process_Creator: 
+### 2) Process_Creator: 
 This class creates an array of processes and assigns random arrival time and burst time to each process. 
 
   - ##### Data Members:
@@ -50,7 +67,7 @@ This class creates an array of processes and assigns random arrival time and bur
   - ##### Member functions of this class are:
     - ***getarr:*** returns process_array
 
-##### 3) Scheduler: 
+### 3) Scheduler: 
 This class implements the scheduling algorithms, viz., First Come First Serve (FCFS),Shortest Remaining Time First (SRTF), and Round Robin. The class maintain a ready queue of fixed capacity. 
   - ##### Data Members:
       - ***tq:*** Time quantam
@@ -88,7 +105,7 @@ This class implements the scheduling algorithms, viz., First Come First Serve (F
 	    
       - ***Status_txt(friend)***
 
-##### 4) Simulator: 
+### 4) Simulator: 
 This class starts the simulation and creates a file where all details of processes are stored.
   - ##### Data Members:
       - ***s:*** object of class Scheduler
@@ -99,19 +116,37 @@ This class starts the simulation and creates a file where all details of process
   - ##### Member functions of this class are:
       - ***Processes_txt:*** this function creates a file "Process.txt" and saves the details of the process i.e. PID, AT, BT, TAT, WT and RT.
 
-#### OTHER FUNCTIONS:
+## Other Functions:
    1) ***swap:*** function that swaps the location of the two processes
    2) ***sort:*** function that sorts the process array in order of their arrival time
    3) ***PID_sort:*** function that sorts the process array in order of their PID
    4) ***Status_txt:*** function that appends the status of the process at the given time period
 
-#### ASSUMPTIONS:
+## Assumptions:
    1) Total number of process: 20
    2) Size of ready queue: 10
    3) The random value of arrival time and burst time assigned are between 1 and 20***.
    4) When two process have the same arrival time and only one process can be pushed into the ready queue pid is taken into consideration.
 
-#### ABOUT SIMULATION TXT FILES:
+## Values Used:
    1) ***Simulation Time:*** 100 ms
    2) ***Time Quantam of Round Robin:*** 5 ms
    
+
+## Lincese
+
+<!-- Adding the license to README is a good practice so that people can easily refer to it.
+
+Make sure you have added a LICENSE file in your project folder. **Shortcut:** Click add new file in your root of your repo in GitHub > Set file name to LICENSE > GitHub shows LICENSE templates > Choose the one that best suits your project!
+
+I personally add the name of the license and provide a link to it like below. -->
+
+[The MIT License](https://opensource.org/licenses/MIT)
+
+## Footer
+<!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
+
+Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
+
+Leave a :star: in GitHub, if you found this helpful. <br>
+[(Back to top)](#table-of-contents)
